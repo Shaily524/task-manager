@@ -1,15 +1,17 @@
 import React from 'react'
 import { useState } from 'react'
 
-const Login = () => { 
+const Login = (handleLogin) => {
+
+  console.log(handleLogin) 
+
    const [email, setEmail ] = useState('')
    const[password, setPassword] = useState ('')
  
  
     const submitHandler = (e)=>{
         e.preventDefault() 
-        console.log("email us",email)
-        console.log("password is",password)
+        handleLogin(email,password)
         setEmail("")
         setPassword("")
 
@@ -21,11 +23,7 @@ const Login = () => {
         onSubmit={(e)=>{
         submitHandler (e)
         
-        
-
-
-
-        }
+         }
 }
         
         className='flex flex-col items-center justify-center' >             
